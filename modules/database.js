@@ -145,10 +145,6 @@ class Database {
    */
   addShell(event, opts) {
     logger.info('addShell', opts);
-    if (opts.base['url'].match(CONF.urlblacklist)) {
-      event.returnValue = "Blacklist URL"
-      return
-    }
     this
       ._url2ip(opts.base['url'])
       .then((ret) => {
@@ -189,10 +185,6 @@ class Database {
 
     const _new = opts.new;
     const _old = opts.old;
-    if (_new.base['url'].match(CONF.urlblacklist)) {
-      event.returnValue = "Blacklist URL"
-      return
-    }
     this
       ._url2ip(_new.base['url'])
       .then((ret) => {

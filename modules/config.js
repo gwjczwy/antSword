@@ -87,10 +87,6 @@ class Conf {
     return require('../package.json');
   }
 
-  get urlblacklist() {
-    return /(gov.cn|edu.cn)/
-  }
-
 }
 
 module.exports = new Conf();
